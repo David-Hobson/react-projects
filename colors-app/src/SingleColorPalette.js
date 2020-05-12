@@ -38,7 +38,7 @@ class SingleColorPalette extends Component {
         const { palette } = this.props;
 
         const colorBoxes = this._shades.map(c => (
-            <ColorBox key={c.name} name={c.name} background={c[format]} showLink={false}/>
+            <ColorBox key={c.name} name={c.name} background={c[format]} showingFullPalette={false}/>
         ));
 
         return (
