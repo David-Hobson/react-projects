@@ -3,10 +3,10 @@ import { withStyles } from "@material-ui/styles";
 import styles from "./styles/FooterStyles";
 
 function PaletteFooter(props) {
-    const { paletteName, emoji} = props;
+    const { paletteName, emoji, classes } = props;
 
     return (
-        <footer className="Palette-footer">
+        <footer className={classes.PaletteFooter}>
             {paletteName}
             <span className="emoji">{emoji}</span>
         </footer>
