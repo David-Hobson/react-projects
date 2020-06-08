@@ -7,22 +7,35 @@ import NewPaletteForm from "./NewPaletteForm";
 import seedColors from "./seedColors";
 import { generatePalette } from './colorHelpers';
 
-class App extends Component{
-  
-  findPalette(id) {
-    return seedColors.find(p => p.id === id);
-  }
+class App extends Component {
+    constructor(props) {
+        super(props);
 
-  render() {
-    return (
-      <Switch>
-        <Route exact path="/" render={(routeProps) => <PaletteList palettes={seedColors} {...routeProps}/>} />
-        <Route exact path="/palette/new" render={() => <NewPaletteForm />} />
-        <Route exact path="/palette/:id" render={routeProps => <Palette palette={generatePalette(this.findPalette(routeProps.match.params.id))}/> }/>
-        <Route exact path="/palette/:paletteId/:colorId" render={(routeProps) => <SingleColorPalette palette={generatePalette(this.findPalette(routeProps.match.params.paletteId))} colorId={routeProps.match.params.colorId}/> }/>
-      </Switch>
-    );
-  }
+        this.state = { palettes: seedColors };
+
+        this.findPalette = this.findPalette.bind(this);
+        this.savePalette = this.savePalette.bind(this);
+        
+    }
+
+    findPalette(id) {
+        return this.state.palettes.find(p => p.id === id);
+    }
+
+    savePalette(newPalette) {
+        this.setState({ palettes: [...this.state.palettes, newPalette]});
+    }
+
+    render() {
+        return (
+            <Switch>
+                <Route exact path="/" render={routeProps => <PaletteList palettes={this.state.palettes} {...routeProps} />} />
+                <Route exact path="/palette/new" render={routeProps => <NewPaletteForm savePalette={this.savePalette} {...routeProps} />} />
+                <Route exact path="/palette/:id" render={routeProps => <Palette palette={generatePalette(this.findPalette(routeProps.match.params.id))} />} />
+                <Route exact path="/palette/:paletteId/:colorId" render={routeProps => <SingleColorPalette palette={generatePalette(this.findPalette(routeProps.match.params.paletteId))} colorId={routeProps.match.params.colorId} />} />
+            </Switch>
+        );
+    }
 }
 
 export default App;
