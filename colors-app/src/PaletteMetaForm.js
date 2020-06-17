@@ -65,7 +65,7 @@ class PaletteMetaForm extends Component {
                     <DialogTitle id="form-dialog-title">Choose a Palette Emoji</DialogTitle>
                     <Picker onSelect={this.savePalette} title="Pick a Palette Emoji"/>
                 </Dialog>
-                <Dialog open={stage === "form"} onClose={this.handleClose} aria-labelledby="form-dialog-title" onClose={hideForm}>
+                <Dialog open={stage === "form"} onClose={hideForm} aria-labelledby="form-dialog-title" >
                     <DialogTitle id="form-dialog-title">Choose a Palette Name</DialogTitle>
                     <ValidatorForm onSubmit={this.showEmojiPicker}>
                         <DialogContent>
