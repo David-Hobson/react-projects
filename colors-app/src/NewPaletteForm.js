@@ -7,11 +7,12 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import Button from "@material-ui/core/Button";
+import { arrayMove } from "react-sortable-hoc";
 
 import DraggableColorList from "./DraggableColorList";
 import PaletteFormNav from "./PaletteFormNav";
 import ColorPickerForm from "./ColorPickerForm";
-import { arrayMove } from "react-sortable-hoc";
+import seedColors from "./seedColors";
 
 import styles from "./styles/NewPaletteFormStyles";
 
@@ -26,7 +27,7 @@ class NewPaletteForm extends Component {
         this.state = {
             open: true,
             newColorName: "",
-            colors: this.props.palettes[0].colors
+            colors: seedColors[0].colors
         };
 
         this.addNewColor = this.addNewColor.bind(this);
