@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import Slider from "rc-slider";
 import 'rc-slider/assets/index.css';
 
-import { withStyles } from "@material-ui/styles";
+import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles/NavbarStyles";
 
 class Navbar extends Component {

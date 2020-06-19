@@ -8,7 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import PaletteRoundedIcon from '@material-ui/icons/PaletteRounded';
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import { withStyles } from "@material-ui/styles";
+import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles/PaletteFormNavStyles";
 
 import PaletteMetaForm from "./PaletteMetaForm";
@@ -47,7 +47,7 @@ class PaletteFormNav extends Component {
 
         return (
             <div className={classes.root}>
-                <CssBaseline />
+            <CssBaseline />
             <AppBar
                 color="default"
                 position='fixed'

@@ -17,7 +17,9 @@ export default {
         height: "150px",
         width: "100%",
         borderRadius: "5px",
-        overflow: "hidden"
+        overflow: "hidden",
+        display: "flex",
+        flexWrap: "wrap"
     },
     title: {
         display: "flex",
@@ -36,10 +38,6 @@ export default {
     miniColor: {
         height: "25%",
         width: "20%",
-        display: "inline-block",
-        margin: "0 auto",
-        position: "relative",
-        marginBottom: "-3px"
     },
     delete: {
 

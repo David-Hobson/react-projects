@@ -5,11 +5,7 @@ const styles = {
     root: {
         width: "20%",
         height: "25%",
-        margin: "0 auto",
-        display: "inline-block",
-        position: "relative",
         cursor: "pointer",
-        marginBottom: "-3.5px",
         "&:hover svg": {
             color: "white",
             transform: "scale(1.5)"
@@ -28,16 +24,15 @@ const styles = {
         }
     },
     boxContent: {
-        position: "absolute",
         padding: "10px",
         width: "100%",
-        left: "0",
-        bottom: "0",
+        height: "100%",
         letterSpacing: "1px",
         textTransform: "uppercase",
         fontSize: "12px",
         display: "flex",
         justifyContent: "space-between",
+        alignItems: "flex-end",
         color: props => chroma.contrast(props.color, "white") >= 4.5 ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 0.6)"
     },
     deleteIcon: {
